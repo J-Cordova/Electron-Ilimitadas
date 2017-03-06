@@ -2,14 +2,14 @@
 
 module ContactManagerApp {
 
-  export class AddStudentController {
+  export class StudentController {
 
     static $inject = ['$mdDialog'];
     constructor(private $mdDialog) {
         this.$mdDialog = $mdDialog;
     }
     
-    user: Student;
+    student: Student;
     
 
     cancel(): void {
@@ -17,7 +17,7 @@ module ContactManagerApp {
     }
     
     save(): void {
-      this.$mdDialog.hide(this.user);
+      this.$mdDialog.hide(this.student);
     }
   }
 }
