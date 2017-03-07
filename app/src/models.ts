@@ -35,6 +35,12 @@ module ContactManagerApp {
     }
   } 
 
+  export class Comment {
+    constructor(
+      public Content: String
+    ){}
+  }
+
   export enum Belt {
     White,
     Blue,
@@ -48,18 +54,21 @@ module ContactManagerApp {
   }
 
   export class Student {
-    constructor(public StartDate : Date,
-                public Active : Boolean,
-                public Belt : Enumerator<Belt>,
-                public Stripes: Number,
-                public Name: String,
+    constructor(public FirstName: String,
+                public LastName: String,
                 public Age: Number,
                 public Gender: Enumerator<Gender>,
                 public Birthday : Date,
                 public Address : String,
                 public PhoneNumber: String,
-                public Email : String)
+                public Email : String,
+                public StartDate : Date,
+                public Active : Boolean,
+                public Belt : Enumerator<Belt>,
+                public Stripes: Number,
+                public Comment: Comment)
     {}
+
   }
 
   

@@ -32,5 +32,44 @@ var ContactManagerApp;
         return Note;
     }());
     ContactManagerApp.Note = Note;
+    var Comment = (function () {
+        function Comment(Content) {
+            this.Content = Content;
+        }
+        return Comment;
+    }());
+    ContactManagerApp.Comment = Comment;
+    var Belt;
+    (function (Belt) {
+        Belt[Belt["White"] = 0] = "White";
+        Belt[Belt["Blue"] = 1] = "Blue";
+        Belt[Belt["Purple"] = 2] = "Purple";
+        Belt[Belt["Brown"] = 3] = "Brown";
+        Belt[Belt["Black"] = 4] = "Black";
+    })(Belt = ContactManagerApp.Belt || (ContactManagerApp.Belt = {}));
+    var Gender;
+    (function (Gender) {
+        Gender[Gender["Male"] = 0] = "Male";
+        Gender[Gender["Female"] = 1] = "Female";
+    })(Gender = ContactManagerApp.Gender || (ContactManagerApp.Gender = {}));
+    var Student = (function () {
+        function Student(FirstName, LastName, Age, Gender, Birthday, Address, PhoneNumber, Email, StartDate, Active, Belt, Stripes, Comment) {
+            this.FirstName = FirstName;
+            this.LastName = LastName;
+            this.Age = Age;
+            this.Gender = Gender;
+            this.Birthday = Birthday;
+            this.Address = Address;
+            this.PhoneNumber = PhoneNumber;
+            this.Email = Email;
+            this.StartDate = StartDate;
+            this.Active = Active;
+            this.Belt = Belt;
+            this.Stripes = Stripes;
+            this.Comment = Comment;
+        }
+        return Student;
+    }());
+    ContactManagerApp.Student = Student;
 })(ContactManagerApp || (ContactManagerApp = {}));
 //# sourceMappingURL=models.js.map
