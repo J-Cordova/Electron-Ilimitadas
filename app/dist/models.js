@@ -52,14 +52,22 @@ var ContactManagerApp;
         Gender[Gender["Male"] = 0] = "Male";
         Gender[Gender["Female"] = 1] = "Female";
     })(Gender = ContactManagerApp.Gender || (ContactManagerApp.Gender = {}));
+    var Belts = (function () {
+        function Belts() {
+        }
+        Belts.getBelts = function () {
+            return ["White", "Blue", "Purple", "Brown", "Black"];
+        };
+        return Belts;
+    }());
+    ContactManagerApp.Belts = Belts;
     var Student = (function () {
-        function Student(FirstName, LastName, Age, Gender, Birthday, Address, PhoneNumber, Email, StartDate, Active, Belt, Stripes, Comment) {
+        function Student(FirstName, LastName, Age, Gender, Birthday, PhoneNumber, Email, StartDate, Active, Belt, Stripes, Comment) {
             this.FirstName = FirstName;
             this.LastName = LastName;
             this.Age = Age;
             this.Gender = Gender;
             this.Birthday = Birthday;
-            this.Address = Address;
             this.PhoneNumber = PhoneNumber;
             this.Email = Email;
             this.StartDate = StartDate;

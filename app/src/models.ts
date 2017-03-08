@@ -53,13 +53,19 @@ module ContactManagerApp {
     Female
   }
 
+export class Belts {
+  static getBelts() : String[]
+  {
+    return ["White", "Blue","Purple","Brown","Black"];
+  }
+}
+
   export class Student {
     constructor(public FirstName: String,
                 public LastName: String,
                 public Age: Number,
                 public Gender: Enumerator<Gender>,
                 public Birthday : Date,
-                public Address : String,
                 public PhoneNumber: String,
                 public Email : String,
                 public StartDate : Date,

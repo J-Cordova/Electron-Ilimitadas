@@ -1,6 +1,7 @@
 /// <reference path="../_all.ts" />
 
 module ContactManagerApp {
+    import Belt = ContactManagerApp.Belt;
 
   export class StudentController {
 
@@ -11,18 +12,10 @@ module ContactManagerApp {
     {}
     
     student: Student; 
-
-    belts(): String[] {
-      var belts: String[] = new Array<String>();
-      
-      for (var belt in Belt) {
-        if (Belt.hasOwnProperty(belt)) {
-            belts.push(belt);
-        }
-     }
-
-      return belts;
-    }  
+    
+    
+    belts : String[] = Belts.getBelts();
+    
 
     cancel(): void {
       this.$mdDialog.cancel();
@@ -48,12 +41,12 @@ module ContactManagerApp {
           clickOutsideToClose: true
         }).then((student:Student) => 
           {
-
+            var x =7;
             //Need to call into mongo to save
             //Hit Save
             // self.users.push(newUser);
             // self.selectUser(newUser);
-            // self.openToast('User Added');
+             //self.openToast('User Added');
           },() => 
           {
               //Use if hit canel

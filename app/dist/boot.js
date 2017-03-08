@@ -4,6 +4,7 @@ var ContactManagerApp;
     angular.module('contactManagerApp', ['ngMaterial', 'ngMdIcons', 'ngMessages'])
         .service('userService', ContactManagerApp.UserService)
         .controller('mainController', ContactManagerApp.MainController)
+        .controller('StudentController', ContactManagerApp.StudentController)
         .config(function ($mdIconProvider, $mdThemingProvider) {
         $mdIconProvider
             .defaultIconSet('./assets/svg/avatars.svg', 128)
@@ -12,7 +13,7 @@ var ContactManagerApp;
             .icon("twitter", "./assets/svg/twitter.svg", 512)
             .icon("phone", "./assets/svg/phone.svg", 512)
             .icon('menu', './assets/svg/menu.svg', 24);
-        $mdThemingProvider.theme('default')
+        $mdThemingProvider.theme('default').dark()
             .primaryPalette('blue')
             .accentPalette('red');
     });

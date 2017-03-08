@@ -22,8 +22,6 @@ module ContactManagerApp {
                 self.users = users;
                 self.selected = users[0];
                 self.userService.selectedUser = self.selected;
-
-                console.log(self.users);
             });
     } 
     
