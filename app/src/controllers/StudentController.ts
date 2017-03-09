@@ -10,19 +10,22 @@ module ContactManagerApp {
     constructor(private $mdDialog: angular.material.IDialogService,
                 private $mdMedia: angular.material.IMedia) 
     {}
-    
-    student: Student; 
-    
-    
+
+    students : Student[];
+
+
     belts : String[] = Belts.getBelts();
-    
 
     cancel(): void {
       this.$mdDialog.cancel();
     }
+
+    createStudent(): void {
+
+    }
     
-    save(): void {
-      this.$mdDialog.hide(this.student);
+    save(firstName: String, lastName: String): void {
+      this.$mdDialog.hide({firstName: String, lastName: String});
     }
 
     addStudent($event)
@@ -39,7 +42,7 @@ module ContactManagerApp {
           controllerAs: 'ctrl',
           fullscreen: useFullScreen,
           clickOutsideToClose: true
-        }).then((student:Student) => 
+        }).then((data) =>
           {
             var x =7;
             //Need to call into mongo to save
@@ -55,4 +58,6 @@ module ContactManagerApp {
 
 
   }
+
+  
 }
