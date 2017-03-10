@@ -5,14 +5,16 @@ module ContactManagerApp {
 
   export class StudentController {
 
-    static $inject = ['$mdDialog','$mdMedia'];
+    static $inject = ['$mdDialog','$mdMedia','$mdSidenav'];
 
     constructor(private $mdDialog: angular.material.IDialogService,
-                private $mdMedia: angular.material.IMedia) 
+                private $mdMedia: angular.material.IMedia,
+                private $mdSidenav: angular.material.ISidenavService) 
     {}
 
-    students : Student[];
+    students : Student[] = [];
 
+    selectedStudent: Student;
 
     belts : String[] = Belts.getBelts();
 
@@ -20,8 +22,9 @@ module ContactManagerApp {
       this.$mdDialog.cancel();
     }
 
-    createStudent(): void {
-
+    CreateStudent(data: CreateStudentModel): Student
+    {
+       return new Student(data.FirstName,data.LastName,null,null,null,'','',new Date(new Date().getDate()),false,Belt.White,0,new Comment(""));
     }
     
     save(firstName: String, lastName: String): void {
@@ -42,22 +45,29 @@ module ContactManagerApp {
           controllerAs: 'ctrl',
           fullscreen: useFullScreen,
           clickOutsideToClose: true
-        }).then((data) =>
+        }).then((data: any) =>
           {
-            var x =7;
-            //Need to call into mongo to save
-            //Hit Save
-            // self.users.push(newUser);
-            // self.selectUser(newUser);
-             //self.openToast('User Added');
+              var model : CreateStudentModel = new CreateStudentModel(data.firstName, data.lastName);
+              var student: Student = this.CreateStudent(model);
+              self.students.push(student);
           },() => 
           {
-              //Use if hit canel
+              
           })
     }
 
+    selectStudent(student: Student) : void 
+    {
+      this.selectedStudent = student;
+      //this.userService.selectedUser = user;
+      //this.$mdSidenav('left').close();
+      //this.tabIndex = 0;
+    }
+
+    toggleSideNav() : void 
+    {
+        this.$mdSidenav('left').toggle();
+    }
 
   }
-
-  
 }

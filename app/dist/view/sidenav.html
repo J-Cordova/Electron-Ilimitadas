@@ -4,7 +4,7 @@
         md-is-locked-open="$mdMedia('gt-md')"
         md-whiteframe="4">
     <md-toolbar>
-            <h1>Contacts</h1>
+            <h1>Students</h1>
     </md-toolbar>
 
   <div layout-padding>
@@ -23,24 +23,25 @@
     </md-autocomplete>
   </div>
 
+<div ng-controller="StudentController as control"> 
   <md-content class="scrollable-nav-content">
     <md-list>
-      <md-list-item ng-repeat="user in vm.users | filter:vm.searchText | orderBy:'name'">
-        <md-button ng-click="vm.selectUser(user)" 
-                   ng-class="{'selected': user === vm.selected }">
-          <md-icon md-svg-icon="{{user.avatar}}" class="avatar"></md-icon>
-          {{user.name}}
+      <md-list-item ng-repeat="student in control.students"><!-- | filter:vm.searchText | orderBy:'LastName'">-->
+        <md-button ng-click="control.selectedStudent(student)" 
+                   ng-class="{'selected': selectedStudent === vm.selectedStudent }">
+          <!--<md-icon md-svg-icon="{{user.avatar}}" class="avatar"></md-icon>-->
+          {{student.FirstName}}
         </md-button>
       </md-list-item>
     </md-list>
   </md-content>
 
-<div ng-controller="StudentController as control">
+<div>
     <md-button class="md-fab md-fab-bottom-right" ng-click="control.addStudent($event)">
     <ng-md-icon icon="add"></ng-md-icon>
   </md-button>
 </div>
-
+</div>
 
 
 </md-sidenav> 

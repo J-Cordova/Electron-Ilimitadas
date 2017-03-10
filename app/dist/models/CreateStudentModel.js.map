@@ -1,1 +1,1 @@
-{"version":3,"file":"CreateStudentModel.js","sourceRoot":"","sources":["../../src/models/CreateStudentModel.ts"],"names":[],"mappings":""}
+{"version":3,"file":"CreateStudentModel.js","sourceRoot":"","sources":["../../src/models/CreateStudentModel.ts"],"names":[],"mappings":"AAAA,mCAAmC;AAEnC,IAAO,iBAAiB,CASvB;AATD,WAAO,iBAAiB;IAExB;QAAA;QAIA,CAAC;QAAD,wBAAC;IAAD,CAAC,AAJD,IAIC;IAJY,mCAAiB,oBAI7B,CAAA;AAGD,CAAC,EATM,iBAAiB,KAAjB,iBAAiB,QASvB"}

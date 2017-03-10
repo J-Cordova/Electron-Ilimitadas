@@ -5,7 +5,7 @@
   </md-toolbar>
 
 
-  <form name="studentForm" ng-submit="ctrl.save(this.studentForm.firstName,this.studentForm.lastName)">
+  <form name="studentForm" ng-submit="ctrl.save({'FirstName' : this.studentForm.FirstName, 'LastName' :this.studentForm.LastName})">
 
     <md-dialog-content>
       <div layout="column" layout-padding>
@@ -14,8 +14,8 @@
 
           <md-input-container class="md-block" flex-gt-sm>
             <label>First Name</label>
-            <input ng-model="ctrl.student.FirstName" name="firstName" required>
-            <div ng-messages="studentForm.firstName.$error">
+            <input name="FirstName" required>
+            <div ng-messages="studentForm.FirstName.$error">
               <div ng-message="required">This is required.</div>
             </div>
           </md-input-container>
@@ -23,8 +23,8 @@
 
           <md-input-container class="md-block" flex-gt-sm>
             <label>Last Name</label>
-            <input ng-model="ctrl.student.LastName" name="lastName" required>
-            <div ng-messages="studentForm.lastName.$error">
+            <input name="LastName" required>
+            <div ng-messages="studentForm.LastName.$error">
               <div ng-message="required">This is required.</div>
             </div>
           </md-input-container>

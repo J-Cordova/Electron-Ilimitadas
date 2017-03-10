@@ -59,6 +59,11 @@ export class Belts {
     return ["White", "Blue","Purple","Brown","Black"];
   }
 }
+  export class CreateStudentModel {
+    constructor(public FirstName: String,
+                public LastName: String)
+    {}
+  }
 
   export class Student {
     constructor(public FirstName: String,
@@ -70,12 +75,10 @@ export class Belts {
                 public Email : String,
                 public StartDate : Date,
                 public Active : Boolean,
-                public Belt : Enumerator<Belt>,
+                public Belt : Belt,
                 public Stripes: Number,
                 public Comment: Comment)
     {}
-
   }
 
-  
 }

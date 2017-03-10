@@ -61,6 +61,14 @@ var ContactManagerApp;
         return Belts;
     }());
     ContactManagerApp.Belts = Belts;
+    var CreateStudentModel = (function () {
+        function CreateStudentModel(FirstName, LastName) {
+            this.FirstName = FirstName;
+            this.LastName = LastName;
+        }
+        return CreateStudentModel;
+    }());
+    ContactManagerApp.CreateStudentModel = CreateStudentModel;
     var Student = (function () {
         function Student(FirstName, LastName, Age, Gender, Birthday, PhoneNumber, Email, StartDate, Active, Belt, Stripes, Comment) {
             this.FirstName = FirstName;

@@ -10,9 +10,6 @@ module ContactManagerApp {
                 private $mdDialog: angular.material.IDialogService,
                 private $mdMedia: angular.material.IMedia,
                 private $mdBottomSheet: angular.material.IBottomSheetService) {
-    //constructor(private $scope: any) {
-      //if wasn't using as in html
-      //this.$scope.message = "Hello from our controller";
       var self = this;
 
       this.userService
