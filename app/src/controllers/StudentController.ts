@@ -14,6 +14,8 @@ module ContactManagerApp {
 
     students : Student[] = [];
 
+    student : CreateStudentModel;
+
     selectedStudent: Student;
 
     belts : String[] = Belts.getBelts();
@@ -27,8 +29,9 @@ module ContactManagerApp {
        return new Student(data.FirstName,data.LastName,null,null,null,'','',new Date(new Date().getDate()),false,Belt.White,0,new Comment(""));
     }
     
-    save(firstName: String, lastName: String): void {
-      this.$mdDialog.hide({firstName: String, lastName: String});
+    save () : void {
+      //this.$mdDialog.hide({'FirstName' : firstName, 'LastName': lastName});
+       this.$mdDialog.hide(this.student);
     }
 
     addStudent($event)
@@ -45,10 +48,10 @@ module ContactManagerApp {
           controllerAs: 'ctrl',
           fullscreen: useFullScreen,
           clickOutsideToClose: true
-        }).then((data: any) =>
+        }).then((data: CreateStudentModel) =>
           {
-              var model : CreateStudentModel = new CreateStudentModel(data.firstName, data.lastName);
-              var student: Student = this.CreateStudent(model);
+              //var model : CreateStudentModel = new CreateStudentModel(data.firstName, data.lastName);
+              var student: Student = this.CreateStudent(data);
               self.students.push(student);
           },() => 
           {

@@ -30,7 +30,7 @@
         <md-button ng-click="control.selectedStudent(student)" 
                    ng-class="{'selected': selectedStudent === vm.selectedStudent }">
           <!--<md-icon md-svg-icon="{{user.avatar}}" class="avatar"></md-icon>-->
-          {{student.FirstName}}
+          {{student.FirstName + " " +  student.LastName}}
         </md-button>
       </md-list-item>
     </md-list>

@@ -9,7 +9,7 @@ module ContactManagerApp {
     
     user: CreateUser;
     
-    avatars = [
+    avatars = [ 
       'svg-1','svg-2','svg-3','svg-4'
     ];
 
