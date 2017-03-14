@@ -19,6 +19,7 @@ module ContactManagerApp {
     selectedStudent: Student;
 
     belts : String[] = Belts.getBelts();
+    tabIndex: Number = 0;
 
     cancel(): void {
       this.$mdDialog.cancel();
@@ -30,7 +31,6 @@ module ContactManagerApp {
     }
     
     save () : void {
-      //this.$mdDialog.hide({'FirstName' : firstName, 'LastName': lastName});
        this.$mdDialog.hide(this.student);
     }
 
@@ -63,8 +63,8 @@ module ContactManagerApp {
     {
       this.selectedStudent = student;
       //this.userService.selectedUser = user;
-      //this.$mdSidenav('left').close();
-      //this.tabIndex = 0;
+      this.$mdSidenav('left').close();
+      this.tabIndex = 0;
     }
 
     toggleSideNav() : void 

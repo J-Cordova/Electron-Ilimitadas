@@ -1,13 +1,13 @@
-
-  <form name="studentForm" ng-submit="ctrl.save()">
-    <!--<md-dialog-content>-->
+<md-dialog>
+  <form name="studentForm" ng-submit="vm.save()">
+    <md-dialog-content>
       <div layout="column" layout-padding>
 
         <div layout-gt-sm="row">
 
           <md-input-container class="md-block" flex-gt-sm>
             <label>First Name</label>
-            <input ng-model="ctrl.student.FirstName" name="firstName" required>
+            <input ng-model="vm.selectedStudent.FirstName" name="firstName" required>
             <div ng-messages="studentForm.firstName.$error">
               <div ng-message="required">This is required.</div>
             </div>
@@ -16,7 +16,7 @@
 
           <md-input-container class="md-block" flex-gt-sm>
             <label>Last Name</label>
-            <input ng-model="ctrl.student.LastName" name="lastName" required>
+            <input ng-model="vm.selectedStudent.LastName" name="lastName" required>
             <div ng-messages="studentForm.lastName.$error">
               <div ng-message="required">This is required.</div>
             </div>
@@ -27,7 +27,7 @@
 
           <md-input-container class="md-block" flex-gt-sm>
             <label>Age</label>
-            <input ng-model="ctrl.student.Age" name="age" type="number" required>
+            <input ng-model="vm.selectedStudent.Age" name="age" type="number" required>
             <div ng-messages="studentForm.age.$error">
               <div ng-message="required">This is required.</div>
             </div>
@@ -38,7 +38,7 @@
           <md-input-container class="md-block" flex-gt-sm>
             <label>Gender</label>
 
-            <md-select ng-model="ctrl.student.Gender" name="gender">
+            <md-select ng-model="vm.selectedStudent.Gender" name="gender">
               <md-option ng-value="Male">Male</md-option>
               <md-option ng-value="Female">Female</md-option>
             </md-select>
@@ -49,7 +49,7 @@
 
           <div class="md-block" flex-gt-sm>
             <label>Birthday</label>
-            <md-datepicker ng-model="ctrl.student.Birthday"
+            <md-datepicker ng-model="vm.selectedStudent.Birthday"
                      md-placeholder="Enter date"
                      class="date-row">
             </md-datepicker>
@@ -62,7 +62,7 @@
         <div layout-gt-sm="row">
           <md-input-container class="md-block" flex-gt-sm>
             <label>PhoneNumber</label>
-            <input ng-model="ctrl.student.PhoneNumber" name="phonenumber" type="text">
+            <input ng-model="vm.selectedStudent.PhoneNumber" name="phonenumber" type="text">
             <div ng-messages="studentForm.phonenumber.$error">
               <div ng-message="required">This is required.</div>
             </div>
@@ -70,14 +70,14 @@
 
           <md-input-container class="md-block" flex-gt-sm>
             <label>Email</label>
-            <input ng-model="ctrl.student.Email" name="email" type="email">
+            <input ng-model="vm.selectedStudent.Email" name="email" type="email">
           </md-input-container>
         </div>
 
         <div layout-gt-sm="row">
           <div class="md-block" flex-gt-sm>
             <label>StartDate</label>
-            <md-datepicker ng-model="ctrl.student.StartDate"
+            <md-datepicker ng-model="vm.selectedStudent.StartDate"
                      md-placeholder="Enter date"
                      class="date-row">
             </md-datepicker>
@@ -87,7 +87,7 @@
           </div>
 
           <md-input-container class="md-block" flex-gt-sm>
-            <md-checkbox  ng-model="ctrl.student.Active" name="Active">
+            <md-checkbox  ng-model="vm.selectedStudent.Active" name="Active">
                 Active
             </md-checkbox>
           </md-input-container>
@@ -96,7 +96,7 @@
         <div layout-gt-sm="row">
           <md-input-container class="md-block" flex-gt-sm>
             <label>Belt</label>
-            <md-select ng-model="ctrl.student.Belt" name="belt">
+            <md-select ng-model="vm.selectedStudent.Belt" name="belt">
               <md-option ng-repeat="belt in ctrl.belts" ng-value="{{belt}}">{{belt}}</md-option>
             </md-select>
           </md-input-container>
@@ -104,20 +104,20 @@
 
           <md-input-container class="md-block" flex-gt-sm>
             <label>Stripes</label>
-            <input ng-model="ctrl.student.Stripes" name="stripes" type="number" min="0" max="4">
+            <input ng-model="vm.selectedStudent.Stripes" name="stripes" type="number" min="0" max="4">
           </md-input-container>
         </div>
 
           <md-input-container class="md-block" flex>
             <label>Comments</label>
-            <textarea ng-model="ctrl.student.Comment" rows="5" name="comment"></textarea>
+            <textarea ng-model="vm.selectedStudent.Comment" rows="5" name="comment"></textarea>
           </md-input-container>
 
       </div>
-    <!--</md-dialog-content>-->
+    </md-dialog-content>
 
-    <!--<md-dialog-actions layout="row">      
-      <md-button ng-click="ctrl.cancel()">
+    <md-dialog-actions layout="row">      
+      <md-button ng-click="vm.cancel()">
         Cancel
       </md-button>
       <md-button type="submit" 
@@ -125,7 +125,8 @@
                  ng-disabled="studentForm.$invalid">
         Save
       </md-button>
-    </md-dialog-actions>-->
+    </md-dialog-actions>
 
 
   </form>
+</md-dialog>

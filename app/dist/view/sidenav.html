@@ -7,7 +7,7 @@
             <h1>Students</h1>
     </md-toolbar>
 
-  <div layout-padding>
+  <!--<div layout-padding>
     <md-autocomplete
       md-search-text="vm.searchText"
       md-items="item in vm.users | filter:vm.searchText"
@@ -21,13 +21,13 @@
         No user matching "{{vm.searchText}}" were found.          
       </md-not-found>
     </md-autocomplete>
-  </div>
+  </div>-->
 
-<div ng-controller="StudentController as control"> 
+<div> 
   <md-content class="scrollable-nav-content">
     <md-list>
-      <md-list-item ng-repeat="student in control.students"><!-- | filter:vm.searchText | orderBy:'LastName'">-->
-        <md-button ng-click="control.selectedStudent(student)" 
+      <md-list-item ng-repeat="student in vm.students"><!-- | filter:vm.searchText | orderBy:'LastName'">-->
+        <md-button ng-click="vm.selectStudent(student)" 
                    ng-class="{'selected': selectedStudent === vm.selectedStudent }">
           <!--<md-icon md-svg-icon="{{user.avatar}}" class="avatar"></md-icon>-->
           {{student.FirstName + " " +  student.LastName}}
@@ -37,7 +37,7 @@
   </md-content>
 
 <div>
-    <md-button class="md-fab md-fab-bottom-right" ng-click="control.addStudent($event)">
+    <md-button class="md-fab md-fab-bottom-right" ng-click="vm.addStudent($event)">
     <ng-md-icon icon="add"></ng-md-icon>
   </md-button>
 </div>

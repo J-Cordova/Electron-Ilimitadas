@@ -20,7 +20,7 @@
   </head>   
 
   <!--as keyword lets you not inject scope into the controller but still access its variables-->
-  <body ng-cloak layout="row" ng-controller="mainController as vm">
+  <body ng-cloak layout="row" ng-controller="StudentController as vm">
     
 
     <div ng-include="'dist/view/sidenav.html'" layout="vertical"></div>
@@ -28,16 +28,23 @@
     <div layout="column" flex id="wrapper">
       <div ng-include="'dist/view/toolbar-header.html'"></div>
       <md-content flex id="content">
+
+        
         <div ng-include="'dist/view/main-content.html'"></div>
         <md-tabs md-dynamic-height="" 
                  md-stretch-tabs="always" 
                  md-selected="vm.tabIndex">
-          <md-tab label="Bio">
-            <div ng-include="'dist/view/tab-bio.html'"></div>           
+
+
+          <md-tab label="Student Information">
+            <div ng-include="'dist/view/StudentInformation.html'"></div>           
           </md-tab>
-          <md-tab label="Notes">
+
+          <md-tab label="Payments">
             <div ng-include="'dist/view/tab-notes.html'"></div>            
           </md-tab>
+
+
         </md-tabs>
       </md-content>
     </div>
