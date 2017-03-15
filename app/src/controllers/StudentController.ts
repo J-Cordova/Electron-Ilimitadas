@@ -30,6 +30,18 @@ module ContactManagerApp {
        return new Student(data.FirstName,data.LastName,null,null,null,'','',new Date(new Date().getDate()),false,Belt.White,0,new Comment(""));
     }
     
+    update() : void{
+      var count : number = 0;
+      for(var i of this.students)
+      {
+         if(i.FirstName == this.selectedStudent.FirstName && i.LastName == this.selectedStudent.LastName)
+         {
+           this.students[count] = this.selectedStudent;
+           return;
+         }
+         count++;
+      }
+    }
     save () : void {
        this.$mdDialog.hide(this.student);
     }

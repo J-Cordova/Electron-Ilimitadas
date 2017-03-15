@@ -1,7 +1,6 @@
-<md-dialog>
-  <form name="studentForm" ng-submit="vm.save()">
-    <md-dialog-content>
-      <div layout="column" layout-padding>
+<div ng-show="vm.selectedStudent">
+<form  name="studentForm" ng-submit="vm.update()">
+    <div layout="column" layout-padding>
 
         <div layout-gt-sm="row">
 
@@ -21,9 +20,6 @@
               <div ng-message="required">This is required.</div>
             </div>
           </md-input-container>
-        </div>
-
-        <div layout-gt-sm="row">
 
           <md-input-container class="md-block" flex-gt-sm>
             <label>Age</label>
@@ -57,25 +53,8 @@
               <div ng-message="required">This is required.</div>
             </div>
           </div>
-        </div>
 
-        <div layout-gt-sm="row">
-          <md-input-container class="md-block" flex-gt-sm>
-            <label>PhoneNumber</label>
-            <input ng-model="vm.selectedStudent.PhoneNumber" name="phonenumber" type="text">
-            <div ng-messages="studentForm.phonenumber.$error">
-              <div ng-message="required">This is required.</div>
-            </div>
-          </md-input-container>
-
-          <md-input-container class="md-block" flex-gt-sm>
-            <label>Email</label>
-            <input ng-model="vm.selectedStudent.Email" name="email" type="email">
-          </md-input-container>
-        </div>
-
-        <div layout-gt-sm="row">
-          <div class="md-block" flex-gt-sm>
+         <div class="md-block" flex-gt-sm>
             <label>StartDate</label>
             <md-datepicker ng-model="vm.selectedStudent.StartDate"
                      md-placeholder="Enter date"
@@ -94,6 +73,20 @@
         </div>
 
         <div layout-gt-sm="row">
+          
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>Email</label>
+            <input ng-model="vm.selectedStudent.Email" name="email" type="email">
+          </md-input-container>
+
+         <md-input-container class="md-block" flex-gt-sm>
+            <label>PhoneNumber</label>
+            <input ng-model="vm.selectedStudent.PhoneNumber" name="phonenumber" type="text">
+            <div ng-messages="studentForm.phonenumber.$error">
+              <div ng-message="required">This is required.</div>
+            </div>
+          </md-input-container>
+
           <md-input-container class="md-block" flex-gt-sm>
             <label>Belt</label>
             <md-select ng-model="vm.selectedStudent.Belt" name="belt">
@@ -108,15 +101,15 @@
           </md-input-container>
         </div>
 
+        <div layout-gt-sm="row"> 
           <md-input-container class="md-block" flex>
             <label>Comments</label>
             <textarea ng-model="vm.selectedStudent.Comment" rows="5" name="comment"></textarea>
           </md-input-container>
 
-      </div>
-    </md-dialog-content>
-
-    <md-dialog-actions layout="row">      
+        </div>
+    
+      <div layout="row">      
       <md-button ng-click="vm.cancel()">
         Cancel
       </md-button>
@@ -125,8 +118,6 @@
                  ng-disabled="studentForm.$invalid">
         Save
       </md-button>
-    </md-dialog-actions>
-
-
-  </form>
-</md-dialog>
+    </div>
+</form>
+</div>
