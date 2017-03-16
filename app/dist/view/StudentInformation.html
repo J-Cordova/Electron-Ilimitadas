@@ -90,7 +90,7 @@
           <md-input-container class="md-block" flex-gt-sm>
             <label>Belt</label>
             <md-select ng-model="vm.selectedStudent.Belt" name="belt">
-              <md-option ng-repeat="belt in ctrl.belts" ng-value="{{belt}}">{{belt}}</md-option>
+              <md-option ng-repeat="beltrank in vm.belts" value="{{beltrank}}">{{beltrank}}</md-option>
             </md-select>
           </md-input-container>
     
@@ -104,19 +104,16 @@
         <div layout-gt-sm="row"> 
           <md-input-container class="md-block" flex>
             <label>Comments</label>
-            <textarea ng-model="vm.selectedStudent.Comment" rows="5" name="comment"></textarea>
+            <textarea ng-model="vm.selectedStudent.Comment.Content" rows="5" name="comment"></textarea>
           </md-input-container>
 
         </div>
     
       <div layout="row">      
-      <md-button ng-click="vm.cancel()">
-        Cancel
-      </md-button>
       <md-button type="submit" 
                  class="md-primary md-raised"
                  ng-disabled="studentForm.$invalid">
-        Save
+        Update
       </md-button>
     </div>
 </form>
